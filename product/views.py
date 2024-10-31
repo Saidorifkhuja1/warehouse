@@ -26,35 +26,6 @@ class ProductDetailView(generics.RetrieveAPIView):
 
 
 
-# class ProductUpdateView(generics.UpdateAPIView):
-#     queryset = Product.objects.all()
-#     serializer_class = ProductSerializer
-#     permission_classes = [IsAdminUser]
-#
-#     def update(self, request, *args, **kwargs):
-#         # Get the original product instance
-#         product = self.get_object()
-#         previous_status = product.status
-#
-#         # Perform the update
-#         response = super().update(request, *args, **kwargs)
-#
-#         # Check if the status has been changed to 'sotildi'
-#         if request.data.get('status') == 'sotildi' and previous_status != 'sotildi':
-#             # Create a SoldProduct instance with the same details
-#             SoldProduct.objects.create(
-#                 name=product.name,
-#                 cost=product.cost,
-#                 amount=product.amount,
-#                 note=product.note,
-#                 add_time=product.add_time,
-#                 status='sotildi',
-#                 category=product.category,
-#             )
-#             # Delete the original product from the Product table
-#             product.delete()
-#
-#         return response
 
 
 class ProductUpdateView(generics.UpdateAPIView):
