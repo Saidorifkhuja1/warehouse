@@ -1,8 +1,13 @@
-
 from rest_framework import serializers
-from .models import Warehouse
+from .models import *
 
-class ShopSerializer(serializers.ModelSerializer):
+class WarehouseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Warehouse
         fields = ['id', 'name', 'owner', 'address', 'phone_number', 'description']
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name', 'warehouse']

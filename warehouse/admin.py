@@ -8,3 +8,6 @@ from django.contrib import admin
 class RestaurantAdmin(admin.ModelAdmin):
     list_display = ['name', 'address', 'phone_number','description']
     search_fields = ['name', 'address']
+
+
+admin.site.register(Category)
